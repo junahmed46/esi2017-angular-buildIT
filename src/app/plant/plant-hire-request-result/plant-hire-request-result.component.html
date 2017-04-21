@@ -1,12 +1,15 @@
-<table class="table table-stripped">
+<table class="table table-stripped" *ngIf="PlantServiceClass.plants.length!=0">
   <tr>
-    <th>Name</th>
+    <th>Name {{PlantServiceClass.plants.length}}</th>
     <th>Description</th>
     <th>Price</th>
   </tr>
-  <tr *ngFor="let plant of PlantServiceClass.plants">
+  <tr  *ngFor="let plant of PlantServiceClass.plants">
     <td>{{plant.name}}</td>
     <td>{{plant.description}}</td>
     <td>{{plant.price}}</td>
   </tr>
 </table>
+<div *ngIf="PlantServiceClass.plants.length==0" class="alert alert-warning">
+  <td>No Plant found</td>
+</div>

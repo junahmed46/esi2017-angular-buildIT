@@ -18,11 +18,26 @@
 
           </div>
 
-          <button type="button" class="btn btn-primary" (click)="PlantServiceClass.executeQuery(query)">Query Plant</button>
+          <button type="button" class="btn btn-primary" (click)="executeQuery()">Query Plant</button>
       </div>
       <div class="col-lg-1">&nbsp;</div>
       <div class="col-lg-7">
-        <H3> Result <span>Based on {{query|json}}</span></H3>
-        <app-plant-hire-request-result></app-plant-hire-request-result>
+        <H3> Result <br><span>Based on {{query|json}}</span></H3>
+        <table class="table table-stripped" *ngIf="PlantServiceClass.plants.length!=0">
+          <tr>
+            <th>Name {{PlantServiceClass.plants.length}}</th>
+            <th>Description</th>
+            <th>Price</th>
+          </tr>
+          <tr  *ngFor="let plant of PlantServiceClass.plants">
+            <td>{{plant.name}}</td>
+            <td>{{plant.description}}</td>
+            <td>{{plant.price}}</td>
+          </tr>
+        </table>
+        <div *ngIf="PlantServiceClass.plants.length==0" class="alert alert-warning">
+          <td>No Plant found</td>
+        </div>
+
       </div>
     </div>

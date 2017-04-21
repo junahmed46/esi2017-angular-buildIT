@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {PlantService} from '../plant.service';
-import {Query} from '../definitions';
 
 @Component({
 
@@ -10,11 +9,9 @@ import {Query} from '../definitions';
   styleUrls: ['./plant-hire-request-result.component.css']
 
 })
+
 export class PlantHireRequestResultComponent implements OnInit {
-  Query = new Query();
   constructor(private PlantServiceClass: PlantService) {}
-
-
   ngOnInit() {
   }
 

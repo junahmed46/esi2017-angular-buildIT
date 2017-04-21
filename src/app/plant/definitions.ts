@@ -5,7 +5,11 @@ export class Query {
 }
 
 export class PlantInventoryEntry {
+  _id: string;
   name: string;
   description: string;
   price: number;
+  _links: object;
+  _xlinks: object;
 }
+
