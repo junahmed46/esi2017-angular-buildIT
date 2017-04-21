@@ -1,0 +1,12 @@
+<table class="table table-stripped">
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Price</th>
+  </tr>
+  <tr *ngFor="let plant of PlantServiceClass.plants">
+    <td>{{plant.name}}</td>
+    <td>{{plant.description}}</td>
+    <td>{{plant.price}}</td>
+  </tr>
+</table>
