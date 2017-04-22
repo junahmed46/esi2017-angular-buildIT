@@ -5,6 +5,7 @@ import { PlantRoutingModule } from './plant-routing.module';
 import { PlantHireRequestComponent } from './plant-hire-request/plant-hire-request.component';
 import { PlantHireRequestResultComponent } from './plant-hire-request-result/plant-hire-request-result.component';
 import { PlantdetailComponent } from './plantdetail/plantdetail.component';
+import { PlantProcurementsRequestComponent } from './plant-procurements-request/plant-procurements-request.component';
 
 @NgModule({
   imports: [
@@ -12,7 +13,7 @@ import { PlantdetailComponent } from './plantdetail/plantdetail.component';
     FormsModule,
     PlantRoutingModule
   ],
-  declarations: [PlantHireRequestComponent, PlantHireRequestResultComponent, PlantdetailComponent]
+  declarations: [PlantHireRequestComponent, PlantHireRequestResultComponent, PlantdetailComponent, PlantProcurementsRequestComponent]
 })
 export class PlantModule { }
 

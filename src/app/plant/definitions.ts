@@ -13,3 +13,32 @@ export class PlantInventoryEntry {
   _xlinks: object;
 }
 
+
+export class PlantOrderRequest {
+  siteEngineer: SiteEngineerEntry;
+  worksEngineer: WorksEngineerEntry;
+  productionSite: ProductionSiteEntry;
+  entry: PlantEntry;
+  rentalPeriod: RentalPeriodEntry;
+}
+
+
+export class PlantEntry {
+  plant_id: number;
+}
+export class SiteEngineerEntry {
+  _id: number;
+}
+export class WorksEngineerEntry {
+  _id: number;
+}
+export class ProductionSiteEntry {
+  _id: number;
+}
+export class RentalPeriodEntry {
+  startDate: Date;
+  endDate: Date;
+}
+
+
+

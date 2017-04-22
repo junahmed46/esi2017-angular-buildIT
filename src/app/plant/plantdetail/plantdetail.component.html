@@ -15,7 +15,9 @@
 
   <tr >
     <td colspan="2" class="text-right" style="padding-top: 20px">
-      <a class="btn btn-success" id="{{PlantServiceClass.plantsDetail._id}}" [routerLink]="['/procurements/plants/',PlantServiceClass.plantsDetail._id]">Create PO</a>
+      <a class="btn btn-success" id="plant_procurements_{{PlantServiceClass.plantsDetail._id}}" [routerLink]="['/procurements/requests/',PlantServiceClass.plantsDetail._id]">Fill PO Form</a>
+      <a class="btn btn-warning" id="plant_detail_{{PlantServiceClass.plantsDetail._id}}" [routerLink]="['/plant-hire-request']">Back to Plants</a>
+
     </td>
   </tr>
 

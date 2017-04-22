@@ -1,0 +1,84 @@
+
+<table class="table table-stripped" *ngIf="PlantServiceClass.plantsDetail.length!=0">
+  <tr >
+    <td colspan="2"><h3>Plant Order Request Form</h3></td>
+  </tr>
+  <tr >
+    <td width="20%">Name</td>
+    <td>{{PlantServiceClass.plantsDetail.name}}</td>
+  </tr>
+
+  <tr >
+    <td width="20%">Description</td>
+    <td>{{PlantServiceClass.plantsDetail.description}}</td>
+  </tr>
+  <tr >
+    <td width="20%">Price</td>
+    <td>{{PlantServiceClass.plantsDetail.price}}</td>
+  </tr>
+
+  <tr >
+    <td width="20%">Start Date</td>
+    <td>
+
+      <input type="date" [(ngModel)]="rentalPeriod.startDate" class="form-control" id="startDate" placeholder="Enter Start Date">
+    </td>
+  </tr>
+  <tr >
+    <td width="20%">End Date</td>
+    <td>
+      <input type="date" [(ngModel)]="rentalPeriod.endDate" class="form-control" id="endDate" placeholder="Enter Start Date">
+    </td>
+  </tr>
+
+
+  <tr >
+    <td width="20%">Site Engineer</td>
+    <td>
+      <select [(ngModel)]="siteEngineerEntry._id" class="form-control" id="site_engineer_id" >
+        <option value="1">SiteEngineer</option>
+        <option value="3">BothEngineer</option>
+      </select>
+    </td>
+  </tr>
+
+  <tr >
+    <td width="20%">Works Engineer</td>
+
+    <td>
+      <select [(ngModel)]="worksEngineerEntry._id" class="form-control" id="work_engineer_id" >
+        <option value="2">WorksEngineer</option>
+        <option value="3">BothEngineer</option>
+      </select>
+    </td>
+  </tr>
+
+  <tr >
+    <td width="20%">Production Site</td>
+    <td>
+      <select [(ngModel)]="productionSiteEntry._id" class="form-control" id="production_site_id" >
+        <option value="1">School</option>
+        <option value="2">Shop</option>
+        <option value="3">Bridge</option>
+      </select>
+    </td>
+  </tr>
+
+
+  <tr >
+    <td style="padding-top: 30px">
+      <button type="button" class="btn btn-primary" (click)="executeQuery()">Create PO</button>
+    </td>
+
+    <td colspan="2" class="text-right" style="padding-top: 30px" >
+      <a class="btn btn-warning"  [routerLink]="['/procurements/plants/',PlantServiceClass.plantsDetail._id]">Back to Plant</a>
+      <a class="btn btn-warning"  [routerLink]="['/plant-hire-request']">Back to Search</a>
+
+    </td>
+  </tr>
+
+
+</table>
+<div *ngIf="PlantServiceClass.plantsDetail.length==0" class="alert alert-warning">
+  <td>No Plant found</td>
+</div>
