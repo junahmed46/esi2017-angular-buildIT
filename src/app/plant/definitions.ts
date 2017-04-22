@@ -22,7 +22,6 @@ export class PlantOrderRequest {
   rentalPeriod: RentalPeriodEntry;
 }
 
-
 export class PlantEntry {
   plant_id: number;
 }

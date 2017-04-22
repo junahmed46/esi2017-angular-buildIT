@@ -10,6 +10,7 @@ export class PlantService {
 
   plants: Array<PlantInventoryEntry> = [];
   plantsDetail: Array<PlantInventoryEntry> = [];
+  PlantOrderDetail: '';
 
   constructor(private http: Http) {}
 
@@ -36,13 +37,18 @@ export class PlantService {
 
     this.http
       .post('http://localhost:8080/api/procurements/requests', JSON.stringify(query),options)
-      .subscribe(response => this.handle(response.json()));
+      .subscribe(response => this.plant_hire_request_handler(response.json()));
 
   }
-
-handle(res)
+plant_hire_request_handler(res)
 {
-  console.log(res);
+  if (!res.hasOwnProperty('_id')) {
+    alert('had some issue check console.log for now as its not handle it')
+    console.log(res);
+  } else {
+
+    window.location.href = 'procurements/requests/detail/' + res._id;
+  }
 }
 
 
@@ -52,6 +58,20 @@ handle(res)
       .get('http://localhost:8080/api/procurements/plants/' + id)
       .subscribe(response => this.plantsDetail = response.json());
   }
+
+
+  procurementsRequestsDetail(id: string) {
+
+    this.http
+      .get('http://localhost:8080/api/procurements/requests/?pid=' + id)
+      .subscribe(response => this.PlantOrderDetail = response.json());
+
+    console.log(this.PlantOrderDetail);
+  }
+
+
+
+
 
 }
 
