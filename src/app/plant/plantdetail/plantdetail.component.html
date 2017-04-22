@@ -1,0 +1,26 @@
+
+<table class="table table-stripped" *ngIf="PlantServiceClass.plantsDetail.length!=0">
+  <tr >
+    <td colspan="2"><h3>{{PlantServiceClass.plantsDetail.name}}</h3></td>
+  </tr>
+  <tr >
+    <td width="20%">Description</td>
+    <td>{{PlantServiceClass.plantsDetail.description}}</td>
+  </tr>
+  <tr >
+    <td width="20%">Price</td>
+    <td>{{PlantServiceClass.plantsDetail.price}}</td>
+  </tr>
+
+
+  <tr >
+    <td colspan="2" class="text-right" style="padding-top: 20px">
+      <a class="btn btn-success" id="{{PlantServiceClass.plantsDetail._id}}" [routerLink]="['/procurements/plants/',PlantServiceClass.plantsDetail._id]">Create PO</a>
+    </td>
+  </tr>
+
+
+</table>
+<div *ngIf="PlantServiceClass.plantsDetail.length==0" class="alert alert-warning">
+  <td>No Plant found</td>
+</div>

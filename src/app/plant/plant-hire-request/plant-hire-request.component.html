@@ -25,14 +25,19 @@
         <H3> Result <br><span>Based on {{query|json}}</span></H3>
         <table class="table table-stripped" *ngIf="PlantServiceClass.plants.length!=0">
           <tr>
-            <th>Name {{PlantServiceClass.plants.length}}</th>
+            <th>Name</th>
             <th>Description</th>
             <th>Price</th>
+            <th>Action</th>
           </tr>
           <tr  *ngFor="let plant of PlantServiceClass.plants">
             <td>{{plant.name}}</td>
             <td>{{plant.description}}</td>
             <td>{{plant.price}}</td>
+            <td>
+              <a class="btn btn-success" id="{{plant._id}}" [routerLink]="['/procurements/plants/',plant._id]">Detail</a>
+            </td>
+
           </tr>
         </table>
         <div *ngIf="PlantServiceClass.plants.length==0" class="alert alert-warning">

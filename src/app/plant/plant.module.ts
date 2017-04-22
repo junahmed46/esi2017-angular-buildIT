@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { PlantRoutingModule } from './plant-routing.module';
 import { PlantHireRequestComponent } from './plant-hire-request/plant-hire-request.component';
 import { PlantHireRequestResultComponent } from './plant-hire-request-result/plant-hire-request-result.component';
+import { PlantdetailComponent } from './plantdetail/plantdetail.component';
 
 @NgModule({
   imports: [
@@ -11,7 +12,7 @@ import { PlantHireRequestResultComponent } from './plant-hire-request-result/pla
     FormsModule,
     PlantRoutingModule
   ],
-  declarations: [PlantHireRequestComponent, PlantHireRequestResultComponent]
+  declarations: [PlantHireRequestComponent, PlantHireRequestResultComponent, PlantdetailComponent]
 })
 export class PlantModule { }
 

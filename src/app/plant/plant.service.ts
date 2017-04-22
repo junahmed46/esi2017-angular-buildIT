@@ -5,7 +5,8 @@ import {PlantInventoryEntry, Query} from './definitions';
 @Injectable()
 export class PlantService {
 
-  plants: Array<PlantInventoryEntry> = []
+  plants: Array<PlantInventoryEntry> = [];
+  plantsDetail: Array<PlantInventoryEntry> = [];
 
   constructor(private http: Http) {}
 
@@ -25,6 +26,12 @@ export class PlantService {
       .subscribe(response => this.plants = response.json());
   }
 
+  plantdetail(id: number) {
+
+    this.http
+      .get('http://localhost:8080/api/procurements/plants/' + id)
+      .subscribe(response => this.plantsDetail = response.json());
+  }
 
 }
 
