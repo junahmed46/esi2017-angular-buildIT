@@ -1,3 +1,9 @@
+# Instal Jquery and Bootstrap 
+
+npm install jquery
+npm install bootstrap@3
+
+
 # BuildItAngular
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0.
